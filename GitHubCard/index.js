@@ -1,3 +1,4 @@
+import axios from 'axios';
 /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
@@ -26,19 +27,19 @@
 
     Using that array, iterate over it, requesting data for each user, creating a new card for each
     user, and adding that card to the DOM.
-*/
+    */
+   
+   // const followersArray = [];
 
-const followersArray = [];
-
-/*
-  STEP 3: Create a function that accepts a single object as its only argument.
+   /*
+   STEP 3: Create a function that accepts a single object as its only argument.
     Using DOM methods and properties, create and return the following markup:
-
+    
     <div class="card">
       <img src={image url of user} />
       <div class="card-info">
-        <h3 class="name">{users name}</h3>
-        <p class="username">{users user name}</p>
+      <h3 class="name">{users name}</h3>
+      <p class="username">{users user name}</p>
         <p>Location: {users location}</p>
         <p>Profile:
           <a href={address to users github page}>{address to users github page}</a>
@@ -46,15 +47,112 @@ const followersArray = [];
         <p>Followers: {users followers count}</p>
         <p>Following: {users following count}</p>
         <p>Bio: {users bio}</p>
-      </div>
-    </div>
-*/
+        </div>
+        </div>
+        */
+        const users = [
+        'duckets615',
+        'tetondan', 
+        'dustinmyers', 
+        'justsml', 
+        'luishrd',
+        'bigknell',
+        'abpot',
+        'goist',
+        'elsonic',
+        'jonathanong',
+        'mikermcneil', 
+        'benbalter',
+        'jxnblk',
+        'yegor256',
+        'orta',
+        'rstacruz',
+        'GrahamCampbell',
+        'afc163',
+        'kamranahmedse',
+        'joshaber',
+        'bkeepers',
+        'kennethreitz',
+        'STRML',
+        'atmos',
+        'weierophinney',
+        'agentzh',
+        'steipete', 
+        'mikepenz',
+        'nvie', 
+        'hadley',
+        'appleboy',
+        'Rich-Harris',
+        'fabpot',
+        ];
 
-/*
-  List of LS Instructors Github username's:
-    tetondan
-    dustinmyers
-    justsml
-    luishrd
-    bigknell
-*/
+function cardStructure(obj) {
+  const card = document.createElement('div');
+  const img = document.createElement('img');
+  const cardInfo = document.createElement('div');
+  const name = document.createElement('h3');
+  const userName = document.createElement('p');
+  const location = document.createElement('p');
+  const profile = document.createElement('p');
+  const aTag = document.createElement('a');
+  const followers = document.createElement('p');
+  const following = document.createElement('p');
+  const bio = document.createElement('p');
+  const pic = obj.data['avatar_url'];
+  const expand = document.createElement('div');
+  const expandChild = document.createElement('p')
+
+  card.className = 'card';
+  img.className = 'image';
+  cardInfo.className = 'card-info';
+  name.className = 'name';
+  userName.className = 'userName';
+  location.className = 'location';
+  profile.className = 'profile';
+  aTag.className = 'aTag';
+  followers.className = 'followers';
+  following.className = 'following';
+  bio.className = 'bio';
+  expand.className = 'expand';
+  expandChild.className = 'expandChild';
+
+  aTag.setAttribute('href', obj.data.html_url);
+  aTag.textContent = obj.data.html_url;
+
+  card.appendChild(img);
+  card.appendChild(cardInfo);
+  cardInfo.appendChild(name);
+  cardInfo.appendChild(userName);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  profile.append(aTag);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+  cardInfo.appendChild(expand);
+  expand.appendChild(expandChild)
+
+  img.src = pic;
+  name.innerText = obj.data.name;
+  userName.innerText = obj.data.login;
+  location.innerText = `Location: ${obj.data.location}`;
+  profile.textContent = aTag;
+  followers.innerText = `Followers: ${obj.data.followers}`;
+  following.innerText = `Following: ${obj.data.following}`;
+  bio.innerText = `Bio: ${obj.data.bio}`;
+  expandChild.textContent = 'Expand'
+
+  return card;
+}
+
+const cards = document.querySelector('.cards');
+
+// const users = ['dustinmyers'];
+
+// cards.appendChild(cardStructure('tetondan'))
+users.forEach(person => {
+  axios.get(`https://api.github.com/users/${person}`)
+  .then(response => cards.appendChild(cardStructure(response)))
+  .catch(error => console.log(error));
+});
+

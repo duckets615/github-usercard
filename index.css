@@ -122,6 +122,11 @@ body {
   font-style: italic;
   margin: 3px 0 10px;
 }
-
-
+.expand {
+  display: flex;
+  justify-content: center;
+}
+.expandChild {
+  margin: 0px 0px 0px 0px;
+}
 
