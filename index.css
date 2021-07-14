@@ -90,8 +90,17 @@ body {
 .cards {
   width: 100%;
 }
-
+.card-close {
+  height: 170px;
+  /* transition: height 1000ms; */
+  display: flex;
+}
+.card-open {
+  height: 400px;
+  /* transition: height 1000ms; */
+}
 .card {
+  display: flex;
   width: 100%;
   padding: 20px;
   display: flex;
@@ -99,11 +108,11 @@ body {
   box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
   margin-bottom: 30px;
+  transition: height 1000ms;
 }
-
 .card img {
   width: 150px;
-  height: 150px;
+  height: 138px;
   border-radius: 3px;
   margin-right: 20px;
 }
@@ -123,10 +132,17 @@ body {
   margin: 3px 0 10px;
 }
 .expand {
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  height: 20px;
+  vertical-align: baseline;
 }
 .expandChild {
-  margin: 0px 0px 0px 0px;
+  position: absolute;
+  left: 50%;
+  transition: opacity 1000ms;
+  cursor: pointer;
+}
+.expandInfo {
+  display: none;
 }
 
