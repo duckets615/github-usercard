@@ -1,4 +1,66 @@
-import logger from './top-card.js'
+import {topCard, logger} from './top-card.js'
+import {tabInfo, loggerEx} from './expand-card'
+import {loggerExpBtn} from './expand-btn.js';
+
+const users = ['duckets615','tetondan', 'dustinmyers', 'justsml', 'luishrd','bigknell','jonathanong','mikermcneil', 
+               'benbalter','jxnblk','yegor256','orta','rstacruz','GrahamCampbell','afc163','kamranahmedse',
+               'joshaber','bkeepers','kennethreitz','STRML','atmos','weierophinney','agentzh','steipete','mikepenz',
+               'nvie','hadley','appleboy','Rich-Harris','fabpot'];
+
+console.log(logger());
+console.log(loggerEx());
+console.log(loggerExpBtn());
+
+
+// const cards = document.querySelector('.cards');
+// users.forEach(person => {
+//   axios.get(`https://api.github.com/users/${person}`)
+//   .then(response => cards.appendChild(cardStructure(response)))
+//   .catch(error => console.log(error));
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
   STEP 1: using axios, send a GET request to the following URL
@@ -30,59 +92,12 @@ import logger from './top-card.js'
     user, and adding that card to the DOM.
     */
    
-   // const followersArray = [];
+   /* const followersArray = [];
 
-   /*
+   
    STEP 3: Create a function that accepts a single object as its only argument.
     Using DOM methods and properties, create and return the following markup:
-    
-    <div class="card">
-      <img src={image url of user} />
-      <div class="card-info">
-      <h3 class="name">{users name}</h3>
-      <p class="username">{users user name}</p>
-        <p>Location: {users location}</p>
-        <p>Profile:
-          <a href={address to users github page}>{address to users github page}</a>
-        </p>
-        <p>Followers: {users followers count}</p>
-        <p>Following: {users following count}</p>
-        <p>Bio: {users bio}</p>
-        </div>
-        </div>
-        */
-        const users = [
-        'duckets615',
-        'tetondan', 
-        'dustinmyers', 
-        'justsml', 
-        'luishrd',
-        'bigknell',
-        'jonathanong',
-        'mikermcneil', 
-        'benbalter',
-        'jxnblk',
-        'yegor256',
-        'orta',
-        'rstacruz',
-        'GrahamCampbell',
-        'afc163',
-        'kamranahmedse',
-        'joshaber',
-        'bkeepers',
-        'kennethreitz',
-        'STRML',
-        'atmos',
-        'weierophinney',
-        'agentzh',
-        'steipete', 
-        'mikepenz',
-        'nvie', 
-        'hadley',
-        'appleboy',
-        'Rich-Harris',
-        'fabpot',
-        ];
+    */
 
 // function cardStructure(obj) {
 //   const card = document.createElement('div');

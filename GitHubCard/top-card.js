@@ -33,6 +33,6 @@ const topCard = () => {
     return card;
 }
 
-const logger = () => console.log('import');
+const logger = () => console.log('top-card import working');
 
-export {topCard, logger}
+export {topCard, logger};
