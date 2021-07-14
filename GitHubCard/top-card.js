@@ -1,4 +1,7 @@
-const topCard = () => {
+const topCard = (obj) => {
+
+    //----- CREATED ELEMENTS ----- //
+
     const card = document.createElement('div');
     const img = document.createElement('img');
     const cardInfo = document.createElement('div');
@@ -10,15 +13,32 @@ const topCard = () => {
     const followers = document.createElement('p');
     const following = document.createElement('p');
 
+    //----- CLASSES ----- //
+
+    card.className = 'card';
+    card.classList.add('card-close');
+    img.className = 'image';
+    cardInfo.className = 'card-info';
+    name.className = 'name';
+    userName.className = 'userName';
+    location.className = 'location';
+    profile.className = 'profile';
+    aTag.className = 'aTag';
+    followers.className = 'followers';
+    following.className = 'following';
+
+    //----- CONTENT ----- //    
+
     img.src = obj.data['avatar_url'];
     name.innerText = obj.data.name;
     userName.innerText = obj.data.login;
     location.innerText = `Location: ${obj.data.location}`;
     aTag.setAttribute('href', obj.data.html_url);
     aTag.textContent = obj.data.html_url;
-    profile.textContent = aTag;
     followers.innerText = `Followers: ${obj.data.followers}`;
     following.innerText = `Following: ${obj.data.following}`;
+
+    //----- ASSEMBLY ----- //
 
     card.appendChild(img);
     card.appendChild(cardInfo);
@@ -33,6 +53,4 @@ const topCard = () => {
     return card;
 }
 
-const logger = () => console.log('top-card import working');
-
-export {topCard, logger};
+export {topCard};

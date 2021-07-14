@@ -1,9 +1,9 @@
 
-const tabInfo = () => {
+const tabInfo = (obj) => {
 
     //----- CREATED ELEMENTS ----- //
     
-    const card = document.createElement('div');
+    const expandCard = document.createElement('div');
     const basicInfo = document.createElement('p');
     const ID = document.createElement('p');
     const twitter = document.createElement('p');
@@ -18,7 +18,7 @@ const tabInfo = () => {
     
     //----- CLASSES ----- //
     
-    card.className = 'card';
+    expandCard.className = 'expandCard';
     basicInfo.className = 'basicInfo';
     ID.className = 'id';
     twitter.className = 'twitter';
@@ -48,20 +48,19 @@ const tabInfo = () => {
     
     //----- ASSEMBLY ----- //
 
-    card.appendChild(basicInfo);
-    card.appendChild(ID);
-    card.appendChild(twitter);
-    card.appendChild(email);
-    card.appendChild(company);
-    card.appendChild(hireable); 
-    card.appendChild(bio);
-    card.appendChild(blog);
-    card.appendChild(repoLink);
-    card.appendChild(created);
-    card.appendChild(updated);
+    expandCard.appendChild(basicInfo);
+    expandCard.appendChild(ID);
+    expandCard.appendChild(twitter);
+    expandCard.appendChild(email);
+    expandCard.appendChild(company);
+    expandCard.appendChild(hireable); 
+    expandCard.appendChild(bio);
+    expandCard.appendChild(blog);
+    expandCard.appendChild(repoLink);
+    expandCard.appendChild(created);
+    expandCard.appendChild(updated);
 
-    return card;
+    return expandCard;
 }
 
-const loggerEx = () => console.log('expand-card import works!')
-export {tabInfo, loggerEx};
+export {tabInfo};

@@ -18,4 +18,4 @@ const expandButton = () => {
     return expandDiv;
 }
 
-export {expandButton}
+export {expandButton};

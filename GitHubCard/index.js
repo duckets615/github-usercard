@@ -1,65 +1,57 @@
-import {topCard, logger} from './top-card.js'
-import {tabInfo, loggerEx} from './expand-card'
-import {loggerExpBtn} from './expand-btn.js';
+import axios from 'axios';
+import {topCard} from './top-card'
+import {tabInfo} from './expand-card'
+import {expandButton} from './expand-btn';
+// import users from './users';
 
-const users = ['duckets615','tetondan', 'dustinmyers', 'justsml', 'luishrd','bigknell','jonathanong','mikermcneil', 
-               'benbalter','jxnblk','yegor256','orta','rstacruz','GrahamCampbell','afc163','kamranahmedse',
-               'joshaber','bkeepers','kennethreitz','STRML','atmos','weierophinney','agentzh','steipete','mikepenz',
-               'nvie','hadley','appleboy','Rich-Harris','fabpot'];
+const users = [
+  'duckets615',
+  'tetondan', 
+  'dustinmyers', 
+  'justsml', 
+  'luishrd',
+  'bigknell',
+  'jonathanong',
+  'mikermcneil',
+  'benbalter',
+  'jxnblk',
+  'yegor256',
+  'orta',
+  'rstacruz',
+  'GrahamCampbell',
+  'afc163',
+  'kamranahmedse',
+  'joshaber',
+  'bkeepers',
+  'kennethreitz',
+  'STRML',
+  'atmos',
+  'weierophinney',
+  'agentzh',
+  'steipete',
+  'mikepenz',
+  'nvie',
+  'hadley',
+  'appleboy',
+  'Rich-Harris',
+  'fabpot'
+];
 
-console.log(logger());
-console.log(loggerEx());
-console.log(loggerExpBtn());
+const cards = document.querySelector('.cards');
 
-
-// const cards = document.querySelector('.cards');
-// users.forEach(person => {
-//   axios.get(`https://api.github.com/users/${person}`)
-//   .then(response => cards.appendChild(cardStructure(response)))
-//   .catch(error => console.log(error));
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const cardStructure = obj => {
+  let frag = document.createDocumentFragment();
+  frag.appendChild(topCard(obj)).appendChild(tabInfo(obj)).appendChild(expandButton())  
+  cards.appendChild(frag)
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+users.forEach(person => {
+  axios.get(`https://api.github.com/users/${person}`)
+  .then(response => cardStructure(response))
+  .catch(error => console.log(error));
+});
 
 
 /*
@@ -232,21 +224,7 @@ console.log(loggerExpBtn());
   //     },1000)
   //   }
 //   });
-  // 
-//   return card;
-// }
-// 
-// const cards = document.querySelector('.cards');
-// 
-// const users = ['dustinmyers'];
-// 
-// cards.appendChild(cardStructure('tetondan'))
-// users.forEach(person => {
-//   axios.get(`https://api.github.com/users/${person}`)
-//   .then(response => cards.appendChild(cardStructure(response)))
-//   .catch(error => console.log(error));
-// });
-// 
+
 // 
 // {
 //   "id": 173,

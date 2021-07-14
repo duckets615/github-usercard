@@ -131,18 +131,17 @@ body {
   font-style: italic;
   margin: 3px 0 10px;
 }
-.expand {
+.expandDiv {
   margin: auto;
   height: 20px;
   vertical-align: baseline;
 }
-.expandChild {
+.expandButton {
   position: absolute;
   left: 50%;
+  /* bottom: 10px; */
   transition: opacity 1000ms;
   cursor: pointer;
 }
-.expandInfo {
-  display: none;
-}
+
 
