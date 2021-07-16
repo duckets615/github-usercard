@@ -6,53 +6,52 @@ import {expandButton} from './expand-btn';
 
 const users = [
   'duckets615',
-  'tetondan', 
-  'dustinmyers', 
-  'justsml', 
-  'luishrd',
-  'bigknell',
-  'jonathanong',
-  'mikermcneil',
-  'benbalter',
-  'jxnblk',
-  'yegor256',
-  'orta',
-  'rstacruz',
-  'GrahamCampbell',
-  'afc163',
-  'kamranahmedse',
-  'joshaber',
-  'bkeepers',
-  'kennethreitz',
-  'STRML',
-  'atmos',
-  'weierophinney',
-  'agentzh',
-  'steipete',
-  'mikepenz',
-  'nvie',
-  'hadley',
-  'appleboy',
-  'Rich-Harris',
-  'fabpot'
+  // 'tetondan', 
+  // 'dustinmyers', 
+  // 'justsml', 
+  // 'luishrd',
+  // 'bigknell',
+  // 'jonathanong',
+  // 'mikermcneil',
+  // 'benbalter',
+  // 'jxnblk',
+  // 'yegor256',
+  // 'orta',
+  // 'rstacruz',
+  // 'GrahamCampbell',
+  // 'afc163',
+  // 'kamranahmedse',
+  // 'joshaber',
+  // 'bkeepers',
+  // 'kennethreitz',
+  // 'STRML',
+  // 'atmos',
+  // 'weierophinney',
+  // 'agentzh',
+  // 'steipete',
+  // 'mikepenz',
+  // 'nvie',
+  // 'hadley',
+  // 'appleboy',
+  // 'Rich-Harris',
+  // 'fabpot'
 ];
 
 const cards = document.querySelector('.cards');
 
 const cardStructure = obj => {
   let frag = document.createDocumentFragment();
-  frag.appendChild(topCard(obj)).appendChild(tabInfo(obj)).appendChild(expandButton())  
+  frag.appendChild(topCard(obj))
+  frag.appendChild(tabInfo(obj))
+  frag.appendChild(expandButton())  
   cards.appendChild(frag)
 }
-
-
 
 users.forEach(person => {
   axios.get(`https://api.github.com/users/${person}`)
   .then(response => cardStructure(response))
   .catch(error => console.log(error));
 });
-
 
 /*
   STEP 1: using axios, send a GET request to the following URL

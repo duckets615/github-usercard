@@ -3,6 +3,7 @@ const topCard = (obj) => {
     //----- CREATED ELEMENTS ----- //
 
     const card = document.createElement('div');
+    const topCard = document.createElement('div');
     const img = document.createElement('img');
     const cardInfo = document.createElement('div');
     const name = document.createElement('h3');
@@ -16,6 +17,8 @@ const topCard = (obj) => {
     //----- CLASSES ----- //
 
     card.className = 'card';
+    card.classList.add('card-open')
+    topCard.className = 'topCard';
     card.classList.add('card-close');
     img.className = 'image';
     cardInfo.className = 'card-info';
@@ -28,20 +31,20 @@ const topCard = (obj) => {
     following.className = 'following';
 
     //----- CONTENT ----- //    
-
-    img.src = obj.data['avatar_url'];
-    name.innerText = obj.data.name;
-    userName.innerText = obj.data.login;
-    location.innerText = `Location: ${obj.data.location}`;
-    aTag.setAttribute('href', obj.data.html_url);
-    aTag.textContent = obj.data.html_url;
-    followers.innerText = `Followers: ${obj.data.followers}`;
-    following.innerText = `Following: ${obj.data.following}`;
+    const data = obj.data
+    img.src = data['avatar_url'];
+    name.innerText = data.name;
+    userName.innerText = data.login;
+    location.innerText = `Location:  ${data.location || `Unknown`}`;
+    aTag.setAttribute('href', data.html_url);
+    aTag.textContent = `${data.html_url || `No link available`}`;
+    followers.innerText = `Followers: ${data.followers}`;
+    following.innerText = `Following: ${data.following}`;
 
     //----- ASSEMBLY ----- //
-
-    card.appendChild(img);
-    card.appendChild(cardInfo);
+    card.appendChild(topCard);
+    topCard.appendChild(img);
+    topCard.appendChild(cardInfo);
     cardInfo.appendChild(name);
     cardInfo.appendChild(userName);
     cardInfo.appendChild(location);

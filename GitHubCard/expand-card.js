@@ -4,7 +4,6 @@ const tabInfo = (obj) => {
     //----- CREATED ELEMENTS ----- //
     
     const expandCard = document.createElement('div');
-    const basicInfo = document.createElement('p');
     const ID = document.createElement('p');
     const twitter = document.createElement('p');
     const email = document.createElement('p');
@@ -19,7 +18,7 @@ const tabInfo = (obj) => {
     //----- CLASSES ----- //
     
     expandCard.className = 'expandCard';
-    basicInfo.className = 'basicInfo';
+    expandCard.classList.add('expandCardOpen');
     ID.className = 'id';
     twitter.className = 'twitter';
     email.className = 'email';
@@ -32,23 +31,20 @@ const tabInfo = (obj) => {
     updated.className = 'updated';
     
     //----- CONTENT ----- //
-    
-    basicInfo.textContent = `User Info`
-    ID.textContent = `User ID: ${obj.data.id}`;
-    twitter.textContent = `Twitter Handle: ${obj.data.twitter_username}`;
-    email.textContent = `Email: ${obj.data.email}`;
-    company.textContent = `Company: ${obj.data.company}`;
-    hireable.textContent = `Hireable${obj.data.hireable}`;
-    hireable.textContent = `Hireable? ${obj.data.hireable}`;
-    bio.textContent = `Hireable? ${obj.data.hireable}`
-    blog.textContent = `Blog: ${obj.data.blog}`;
-    repoLink.href = `Repositories: ${obj.data.repos_url}`
-    created.textContent = `Account created: ${obj.data.created_at}`
-    updated.textContent = `Account updated: ${obj.data.updated_at}`
+    const data = obj.data;
+    ID.textContent = `User ID: ${data.id || `private`}`;
+    twitter.textContent = `Twitter Handle: ${data.twitter_username || `private`}`;
+    email.textContent = `Email: ${data.email || `private`}`;
+    company.textContent = `Company: ${data.company || `private`}`;
+    hireable.textContent = `Hireable? ${data.hireable === true || data.hireable === null ? `Available!` : `Not at this time`}`;
+    bio.textContent = `Bio: ${data.bio || `private`}`;
+    blog.textContent = `Blog: ${data.blog || `private`}`;
+    repoLink.href = `Repositories: ${data.repos_url || `Not available`}`;
+    created.textContent = `Profile created: ${data.created_at || `Date not available`}`;
+    updated.textContent = `Profile last updated: ${data.updated_at || `Unknown`}`;
     
     //----- ASSEMBLY ----- //
 
-    expandCard.appendChild(basicInfo);
     expandCard.appendChild(ID);
     expandCard.appendChild(twitter);
     expandCard.appendChild(email);
