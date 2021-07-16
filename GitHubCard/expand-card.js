@@ -18,7 +18,7 @@ const tabInfo = (obj) => {
     //----- CLASSES ----- //
     
     expandCard.className = 'expandCard';
-    expandCard.classList.add('expandCardOpen');
+    expandCard.classList.add('expandCardClose');
     ID.className = 'id';
     twitter.className = 'twitter';
     email.className = 'email';

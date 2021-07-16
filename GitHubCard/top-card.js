@@ -17,7 +17,7 @@ const topCard = (obj) => {
     //----- CLASSES ----- //
 
     card.className = 'card';
-    card.classList.add('card-open')
+    card.classList.add('card-close')
     topCard.className = 'topCard';
     card.classList.add('card-close');
     img.className = 'image';

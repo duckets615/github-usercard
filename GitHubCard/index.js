@@ -6,8 +6,8 @@ import {expandButton} from './expand-btn';
 
 const users = [
   'duckets615',
-  // 'tetondan', 
-  // 'dustinmyers', 
+  'tetondan', 
+  'dustinmyers', 
   // 'justsml', 
   // 'luishrd',
   // 'bigknell',

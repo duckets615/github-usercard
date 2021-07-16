@@ -7,7 +7,7 @@ const expandButton = () => {
     
     //----- CLASSES ----- //    
     expandDiv.className = 'expandDiv';
-    expandButton.className = 'expandButtonOpen';
+    expandButton.className = 'expandButtonClose';
     
     //----- CONTENT ----- //    
     expandButton.textContent = 'Expand';
