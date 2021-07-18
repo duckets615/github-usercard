@@ -178,8 +178,8 @@ body {
   height: 320px;
 }
 .cards .card img {
-  width: 150px;
-  height: 138px;
+  width: 183px;
+  height: 170px;
   border-radius: 3px;
   margin-right: 20px;
 }
@@ -201,8 +201,9 @@ body {
 .expandCardOpen {
   display: block;
   position: relative;
-  left: 21.1%;
-  bottom: 14px;
+  width: 86%;
+  left: 25.3%;
+  bottom: 43px;
   font-size: 1.5rem;
   transition: opacity 1000ms;
 }
@@ -217,13 +218,12 @@ body {
   transition: opacity 1000ms;
 }
 .expandDivClose {
-  bottom: -26px;
   height: 20px;
   cursor: pointer;
 }
 .expandDivOpen {
   height: 20px;
-  bottom: -2px;
+  bottom: 28px;
   cursor: pointer;
 }
 .expandButtonOpen {

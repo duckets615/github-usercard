@@ -1,47 +1,46 @@
 import axios from 'axios';
-import {topCard} from './top-card'
+import {topCard} from './top-card';
+import {pagin} from './pagination'
 
 const users = [
   'duckets615',
   'tetondan', 
-  // 'dustinmyers', 
-  // 'justsml', 
-  // 'luishrd',
-  // 'bigknell',
-  // 'jonathanong',
-  // 'mikermcneil',
-  // 'benbalter',
-  // 'jxnblk',
-  // 'yegor256',
-  // 'orta',
-  // 'rstacruz',
-  // 'GrahamCampbell',
-  // 'afc163',
-  // 'kamranahmedse',
-  // 'joshaber',
-  // 'bkeepers',
-  // 'kennethreitz',
-  // 'STRML',
-  // 'atmos',
-  // 'weierophinney',
-  // 'agentzh',
-  // 'steipete',
-  // 'mikepenz',
-  // 'nvie',
-  // 'hadley',
-  // 'appleboy',
-  // 'Rich-Harris',
-  // 'fabpot'
+  'dustinmyers', 
+  'justsml', 
+  'luishrd',
+  'bigknell',
+  'jonathanong',
+  'mikermcneil',
+  'benbalter',
+  'jxnblk',
+  'yegor256',
+  'orta',
+  'rstacruz',
+  'GrahamCampbell',
+  'afc163',
+  'kamranahmedse',
+  'joshaber',
+  'bkeepers',
+  'kennethreitz',
+  'STRML',
+  'atmos',
+  'weierophinney',
+  'agentzh',
+  'steipete',
+  'mikepenz',
+  'nvie',
+  'hadley',
+  'appleboy',
+  'Rich-Harris',
+  'fabpot'
 ];
-
+console.log(pagin())
 const cards = document.querySelector('.cards');
 
 const cardStructure = obj => {
   let frag = document.createDocumentFragment();
-  frag.appendChild(topCard(obj))
-  // frag.appendChild(tabInfo(obj))
-  // frag.appendChild(expandButton())  
-  cards.appendChild(frag)
+  frag.appendChild(topCard(obj));
+  cards.appendChild(frag);
 }
 
 users.forEach(person => {

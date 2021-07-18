@@ -45,18 +45,11 @@ const topCard = (obj) => {
     following.innerText = `Following: ${data.following}`;
 
     //----- ASSEMBLY ----- //
-    card.appendChild(topCard);
-    topCard.appendChild(img);
-    topCard.appendChild(cardInfo);
-    cardInfo.appendChild(name);
-    cardInfo.appendChild(userName);
-    cardInfo.appendChild(location);
-    cardInfo.appendChild(profile);
+    card.append(topCard);
+    topCard.append(img, cardInfo);
+    cardInfo.append(name, userName, location, profile, followers, following);
     profile.append(aTag);
-    cardInfo.appendChild(followers);
-    cardInfo.appendChild(following);
-    card.appendChild(expandedCard(obj))
-    card.appendChild(expandButton(obj));
+    card.append(expandedCard(obj), expandButton(obj));
 
     return card;
 }

@@ -44,18 +44,8 @@ const expandedCard = (obj) => {
     updated.textContent = `Profile last updated: ${data.updated_at || `Unknown`}`;
     
     //----- ASSEMBLY ----- //
-
-    expandCard.appendChild(ID);
-    expandCard.appendChild(twitter);
-    expandCard.appendChild(email);
-    expandCard.appendChild(company);
-    expandCard.appendChild(hireable); 
-    expandCard.appendChild(bio);
-    expandCard.appendChild(blog);
-    expandCard.appendChild(repoLink);
-    expandCard.appendChild(created);
-    expandCard.appendChild(updated);
-
+    expandCard.append(ID, twitter, email, company, hireable, bio, blog, repoLink, created, updated);
+    
     return expandCard;
 }
 
