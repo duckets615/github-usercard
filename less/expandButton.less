@@ -1,31 +1,28 @@
-
-// .expandDiv {
-//     position: absolute;
-//     margin: auto;
-//     vertical-align: baseline;
-//   }
 .expandDiv {
-    position: relative;
-    bottom: 231px;
-    height: 20px;
     font-size: 1.3rem;
-    cursor: pointer;
-}
-  .expandButtonOpen {
     position: relative;
     display:flex;
     justify-content: center;
-    cursor: pointer;
-    // left: 50%;
-    // // bottom: 67px;
-    // opacity: 1;
-    // transition: opacity 1000ms;
-    // font-size: 1.2rem;
-  } 
-  .expandButtonClose {
-    position: relative;
-    left: 50%;
-    top: 180px;
     transition: opacity 1000ms;
-  }
+}
+.expandDivClose {
+    bottom: -26px;
+    height: 20px;
+    cursor: pointer;
+}
+.expandDivOpen {
+    height: 20px;
+    bottom: -2px;
+    cursor: pointer;
+}
+.expandButtonOpen {
+    cursor: pointer;
+} 
+.expandButtonClose {
+    bottom: -2px;
+    display:flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 1000ms;
+}
   

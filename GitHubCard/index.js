@@ -1,13 +1,10 @@
 import axios from 'axios';
 import {topCard} from './top-card'
-import {tabInfo} from './expand-card'
-import {expandButton} from './expand-btn';
-// import users from './users';
 
 const users = [
   'duckets615',
   'tetondan', 
-  'dustinmyers', 
+  // 'dustinmyers', 
   // 'justsml', 
   // 'luishrd',
   // 'bigknell',
@@ -42,8 +39,8 @@ const cards = document.querySelector('.cards');
 const cardStructure = obj => {
   let frag = document.createDocumentFragment();
   frag.appendChild(topCard(obj))
-  frag.appendChild(tabInfo(obj))
-  frag.appendChild(expandButton())  
+  // frag.appendChild(tabInfo(obj))
+  // frag.appendChild(expandButton())  
   cards.appendChild(frag)
 }
 

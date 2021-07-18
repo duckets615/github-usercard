@@ -1,3 +1,6 @@
+import {expandedCard} from './expand-card';
+import {expandButton} from './expand-btn';
+
 const topCard = (obj) => {
 
     //----- CREATED ELEMENTS ----- //
@@ -52,6 +55,8 @@ const topCard = (obj) => {
     profile.append(aTag);
     cardInfo.appendChild(followers);
     cardInfo.appendChild(following);
+    card.appendChild(expandedCard(obj))
+    card.appendChild(expandButton(obj));
 
     return card;
 }

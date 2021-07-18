@@ -167,15 +167,15 @@ body {
   margin-bottom: 30px;
   transition: height 1000ms;
 }
+.cards .topCard {
+  display: flex;
+}
 .cards .card-close {
   height: 170px;
   display: flex;
 }
 .cards .card-open {
   height: 320px;
-}
-.cards .topCard {
-  display: flex;
 }
 .cards .card img {
   width: 150px;
@@ -199,30 +199,40 @@ body {
   display: none;
 }
 .expandCardOpen {
+  display: block;
   position: relative;
-  left: 23.5%;
-  bottom: 239px;
+  left: 21.1%;
+  bottom: 14px;
   font-size: 1.5rem;
+  transition: opacity 1000ms;
 }
 .expandCard p {
   margin: 6px;
 }
 .expandDiv {
-  position: relative;
-  bottom: 231px;
-  height: 20px;
   font-size: 1.3rem;
-  cursor: pointer;
-}
-.expandButtonOpen {
   position: relative;
   display: flex;
   justify-content: center;
+  transition: opacity 1000ms;
+}
+.expandDivClose {
+  bottom: -26px;
+  height: 20px;
+  cursor: pointer;
+}
+.expandDivOpen {
+  height: 20px;
+  bottom: -2px;
+  cursor: pointer;
+}
+.expandButtonOpen {
   cursor: pointer;
 }
 .expandButtonClose {
-  position: relative;
-  left: 50%;
-  top: 180px;
+  bottom: -2px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
   transition: opacity 1000ms;
 }

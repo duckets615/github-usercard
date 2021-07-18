@@ -1,5 +1,5 @@
 
-const tabInfo = (obj) => {
+const expandedCard = (obj) => {
 
     //----- CREATED ELEMENTS ----- //
     
@@ -59,4 +59,4 @@ const tabInfo = (obj) => {
     return expandCard;
 }
 
-export {tabInfo};
+export {expandedCard};
