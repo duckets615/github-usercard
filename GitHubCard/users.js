@@ -1,0 +1,35 @@
+
+const users = [
+    'duckets615',
+    'tetondan', 
+    'dustinmyers', 
+    'justsml', 
+    'luishrd',
+    'bigknell',
+    'jonathanong',
+    'mikermcneil',
+    'benbalter',
+    'jxnblk',
+    'yegor256',
+    'orta',
+    'rstacruz',
+    'GrahamCampbell',
+    'afc163',
+    'kamranahmedse',
+    'joshaber',
+    'bkeepers',
+    'kennethreitz',
+    'STRML',
+    'atmos',
+    'weierophinney',
+    'agentzh',
+    'steipete',
+    'mikepenz',
+    'nvie',
+    'hadley',
+    'appleboy',
+    'Rich-Harris',
+    'fabpot'
+];
+
+export {users}

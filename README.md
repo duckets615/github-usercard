@@ -73,3 +73,32 @@ In this project we are going to be accessing the GitHub API and building a socia
 * Look into adding your GitHub contribution graph. There are a number of different ways of doing this, [this Stack Overflow discussion](https://stackoverflow.com/questions/34516592/embed-github-contributions-graph-in-website) will get you started.
 
 Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
+
+
+    <div class="card">
+      <img src={image url of user} />
+      <div class="card-info">
+        <h3 class="name">{users name}</h3>
+        <p class="username">{users user name}</p>
+        <p>Location: {users location}</p>
+        <p>Profile:
+          <a href={address to users github page}>{address to users github page}</a>
+        </p>
+        <p>Followers: {users followers count}</p>
+        <p>Following: {users following count}</p>
+        <p>Bio: {users bio}</p>
+      </div>
+    </div>
+
+  //   "avatar_url": "https://avatars.githubusercontent.com/u/33557104?v=4",
+  //   "name": "Chris Reilly",
+  //   "login": "duckets615",
+  //   "location": null,
+  //   "html_url": "https://github.com/duckets615",
+  //   "followers": 3,
+  //   "following": 0,
+  //   "bio": null,
+  //   "url": "https://api.github.com/users/duckets615",
+//   "followers_url": "https://api.github.com/users/duckets615/followers",
+//   "following_url": "https://api.github.com/users/duckets615/following{/other_user}",
+//   
